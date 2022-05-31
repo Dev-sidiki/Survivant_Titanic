@@ -1,0 +1,34 @@
+{
+  "name": "survivant_titanic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dev-sidiki/Survivant_Titanic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dev-sidiki/Survivant_Titanic/issues"
+  },
+  "homepage": "https://github.com/Dev-sidiki/Survivant_Titanic#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "type": "module",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.4",
+    "pug": "^3.0.2"
+  }
+}
