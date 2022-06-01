@@ -24,12 +24,14 @@ html(lang="en")
                         | Déconnexion
                 else
                     a.item(href="/", class=(currentRoute === "/" ? "active" : ""))
+                        i.file.icon
+                        | a propos du site
+                    a.item(href="/inscription", class=(currentRoute === "/inscription" ? "active" : ""))
                         i.home.icon
                         | Inscription
                     a.item(href="/login", class=(currentRoute === "/login" ? "active" : ""))
                         i.file.icon
                         | Connexion
-
         if flash.success && flash.success.length > 0
             .ui.middle.aligned.center.aligned.grid: .six.wide.column: .ui.success.message
                 each success in flash.success
