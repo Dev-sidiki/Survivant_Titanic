@@ -9,10 +9,11 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
 });
 
+// question??
 UserSchema.static("createUser", createUser);
 UserSchema.static("checkUserCredentials", checkUserCredentials);
 
-// fonction d'inscription d'un nouveau utilisateur
+// fonction d'inscription d'un nouveau utilisateur da la base de donneé
 async function createUser(
   firstName,
   lastName,
@@ -38,12 +39,12 @@ async function createUser(
     throw new Error(errors.join("<br>"));
   }
 
-  // Passwords compare
+  // methode de comparasion des mots de passe saissis
   if (password !== passwordConfirm) {
     throw new Error("Les mots de passe doivent correspondre");
   }
 
-  // Check if user exists
+  // verifie si utilisateur existe deja
   const existingUser = await this.findOne({ email });
   if (existingUser !== null) {
     throw new Error("Un utilisateur existe déjà avec cette adresse email");
@@ -51,7 +52,7 @@ async function createUser(
 
   // Hash password
   const passwordHash = sha256(password);
-
+  // question??
   return await this.create({
     firstName,
     lastName,
@@ -60,6 +61,7 @@ async function createUser(
   });
 }
 
+// methode de verifications des identifiant de l'utilisateur depuis la base de donnée
 async function checkUserCredentials(email, password) {
   const user = await this.findOne({ email, password: sha256(password) });
 
