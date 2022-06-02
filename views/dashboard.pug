@@ -15,10 +15,10 @@ block content
             if errorMessage
                 .ui.error.message!= errorMessage
             //- un formulaire qui me redirigerar sur la page analyser
-            form.ui.large.form(method="post", action="/analyser")
+            form.ui.large.form(method="post", action="/dashboard")
                 .ui.stacked.segment
                     +field('text', 'sexe', 'Sexe', values && values.sexe)
-                    +field('number', 'number', 'Âge', values && values.number)
-                    +field('text', 'classe', 'Classe', values && values.classe)
+                    +field('number', 'age', 'Âge', values && values.age)
+                    +field('number', 'classe', 'Classe', values && values.classe)
                     button(type="submit").ui.fluid.large.teal.submit.button Analyser 
                      i.search.icon
