@@ -36,6 +36,7 @@ export async function analyserPassenger(sexe, age, classe) {
   return await this.find({ Sex: sexe, Age: age, Pclass: classe });
 }
 
+// Récupération d'un Model mongoose sur la base du Schéma
 const collectionName = "passengers";
 export const PassengerModel = mongoose.model(
   "Passenger",

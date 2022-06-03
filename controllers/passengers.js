@@ -1,5 +1,6 @@
 import { PassengerModel } from "../models/Passengers.js";
 
+// fonction qui fait appel a la methode d'analyse depuis le modèle
 export async function AnalysePassengersController(req, res) {
   const { sexe, age, classe } = req.body;
 

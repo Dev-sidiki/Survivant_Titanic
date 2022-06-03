@@ -20,5 +20,6 @@ router.get("/dashboard", authMiddleware, DashboardController);
 
 router.post("/inscription", CreateUserController);
 router.post("/login", LoginUserController);
+// on appel le middleware dans le post dashboard pour garder la session utilisateur
 router.post("/dashboard", authMiddleware, AnalysePassengersController);
 export default router;
