@@ -7,9 +7,21 @@ block content
         .six.wide.column
             h1 Merci d'avoir uilisé <strong> TITANIC_ANALYSER </strong> 
             p Vous trouverez dans le tableau ci-dessous le résultat de l'analyse
-            
-            each passenger in passengerList 
-                div= passenger.Name
+                h3.ui.center.aligned.header Tableau d'analyse
+                .ui.conteneur
+                  table.ui.celled.table.center.aligned 
+                   thead 
+                    tr
+                     th Nom et Prenom
+                     th Sexe
+                     th Age
+                     th Statut 
+                   each passenger in passengerList 
+                    tr 
+                     td= passenger.Name
+                     td= passenger.Sex
+                     td= passenger.Age
+                     td= passenger.Survived
             p Veuillez cliquer sur le boutton ci-dessous
                 i.hand.point.down.icon
                 | pour effectuer une nouvelle analyse
