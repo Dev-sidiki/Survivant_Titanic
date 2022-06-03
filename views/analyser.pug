@@ -5,7 +5,13 @@ include mixins
 block content
     .ui.middle.aligned.center.aligned.grid
         .six.wide.column
-            h1 Mon Tableau de Bord
-
-            p Bienvenue sur<strong> TITANIC_ANALYSER </strong> 
-            p Vous pouvez démarrez votre analyse après avoir remplir le formulaire ci-dessous!!
+            h1 Merci d'avoir uilisé <strong> TITANIC_ANALYSER </strong> 
+            p Vous trouverez dans le tableau ci-dessous le résultat de l'analyse
+            
+            each passenger in passengerList 
+                div= passenger.Name
+            p Veuillez cliquer sur le boutton ci-dessous
+                i.hand.point.down.icon
+                | pour effectuer une nouvelle analyse
+            a.item(href="/dashboard", class=(currentRoute === "/dashboard" ? "active" : ""))
+                    | <button>RESET</button>
