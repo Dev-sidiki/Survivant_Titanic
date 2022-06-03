@@ -11,6 +11,7 @@ export async function AnalysePassengersController(req, res) {
     );
 
     if (passengerList) res.render("analyser", { passengerList });
+
     // console.log(sexe, age, classe);
     console.log(passengerList);
   } catch ({ message: errorMessage }) {
