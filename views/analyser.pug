@@ -16,12 +16,13 @@ block content
                      th Sexe
                      th Age
                      th Statut 
-                   each passenger in passengerList 
+                   each passenger in passengerList  
                     tr 
                      td= passenger.Name
                      td= passenger.Sex
                      td= passenger.Age
-                     td= passenger.Survived
+                     td= passenger.Survived==0 ? "décédé" : "survécue"
+                     
             p Veuillez cliquer sur le boutton ci-dessous
                 i.hand.point.down.icon
                 | pour effectuer une nouvelle analyse
