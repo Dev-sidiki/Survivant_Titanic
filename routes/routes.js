@@ -13,7 +13,6 @@ import { authMiddleware } from "../middlewares.js";
 
 const router = express.Router();
 router.get("/", AboutController);
-// router.get("/analyser", AnalysePassengersController);
 router.get("/inscription", InscriptionController);
 router.get("/login", LoginController);
 router.get("/logout", LogoutController);
@@ -21,5 +20,5 @@ router.get("/dashboard", authMiddleware, DashboardController);
 
 router.post("/inscription", CreateUserController);
 router.post("/login", LoginUserController);
-router.post("/dashboard", AnalysePassengersController);
+router.post("/dashboard", authMiddleware, AnalysePassengersController);
 export default router;
